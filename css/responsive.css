@@ -1,0 +1,491 @@
+/* Mobile First Responsive Design */
+
+/* Extra Small Devices (phones, 576px and down) */
+@media (max-width: 576px) {
+  .container {
+    padding: 0 var(--spacing-sm);
+  }
+
+  /* Header */
+  .nav-container {
+    padding: var(--spacing-sm) var(--spacing-md);
+  }
+
+  .company-name h1 {
+    font-size: 1.125rem;
+  }
+
+  .tagline {
+    font-size: 0.625rem;
+  }
+
+  .header-actions {
+    gap: var(--spacing-sm);
+  }
+
+  .contact-btn {
+    padding: var(--spacing-sm);
+    font-size: 0.8rem;
+  }
+
+  .contact-btn span:not(.fab) {
+    display: none;
+  }
+
+  .mobile-menu-toggle {
+    display: flex;
+  }
+
+  .nav-menu {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background: var(--bg-primary);
+    box-shadow: var(--shadow-lg);
+    padding: var(--spacing-md);
+  }
+
+  .nav-menu.active {
+    display: flex;
+  }
+
+  .nav-link {
+    padding: var(--spacing-md);
+    text-align: center;
+    border-bottom: 1px solid var(--gray-200);
+  }
+
+  /* Main content margin adjustment */
+  main {
+    margin-top: 80px;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1.125rem;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .cta-primary,
+  .cta-secondary {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .hero-features {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-card {
+    max-width: 300px;
+  }
+
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .service-card {
+    margin: 0 var(--spacing-sm);
+  }
+
+  /* Use Cases Section */
+  .use-cases-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  /* Features Section */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  /* Steps Section */
+  .steps-container {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  /* Pricing Section */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+
+  .pricing-card.featured {
+    transform: none;
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+    text-align: center;
+  }
+
+  .footer-bottom-content {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  /* Floating Elements */
+  .whatsapp-float,
+  .chatbot-toggle {
+    width: 50px;
+    height: 50px;
+    font-size: 1.25rem;
+  }
+
+  .chatbot-widget {
+    left: 10px;
+    right: 10px;
+    width: auto;
+    bottom: 80px;
+    height: 400px;
+  }
+
+  /* Section Titles */
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .section-subtitle {
+    font-size: 1.125rem;
+  }
+}
+
+/* Small Devices (landscape phones, 576px and up) */
+@media (min-width: 576px) and (max-width: 767px) {
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Use Cases Section */
+  .use-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Features Section */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Steps Section */
+  .steps-container {
+    grid-template-columns: 1fr;
+  }
+
+  /* Pricing Section */
+  .pricing-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Medium Devices (tablets, 768px and up) */
+@media (min-width: 768px) and (max-width: 991px) {
+  .mobile-menu-toggle {
+    display: none;
+  }
+
+  /* Hero Section */
+  .hero-content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-title {
+    font-size: 3rem;
+  }
+
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Use Cases Section */
+  .use-cases-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Features Section */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Steps Section */
+  .steps-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Pricing Section */
+  .pricing-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr;
+  }
+
+  /* Footer */
+  .footer-content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Large Devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+  /* Hero Section */
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  /* Use Cases Section */
+  .use-cases-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Features Section */
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Steps Section */
+  .steps-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Pricing Section */
+  .pricing-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Contact Section */
+  .contact-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Extra Large Devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+  /* Services Section - Allow more columns on very large screens */
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* Use Cases Section */
+  .use-cases-grid {
+    grid-template-columns: repeat(5, 1fr);
+  }
+
+  /* Hero Section - Restore two-column layout */
+  .hero-content {
+    grid-template-columns: 1fr 1fr;
+    text-align: left;
+  }
+}
+
+/* Ultra Wide Screens (1400px and up) */
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+
+  /* Services Section */
+  .services-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* Landscape Mode Adjustments */
+@media (orientation: landscape) and (max-height: 500px) {
+  .hero-section {
+    padding: var(--spacing-xl) 0;
+  }
+
+  .hero-title {
+    font-size: 2.5rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+  }
+
+  .section-title {
+    font-size: 2rem;
+  }
+
+  .chatbot-widget {
+    height: 300px;
+  }
+}
+
+/* High DPI Displays */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .service-banner img,
+  .use-case-card img {
+    image-rendering: -webkit-optimize-contrast;
+  }
+}
+
+/* Reduced Motion for Accessibility */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+
+  .bubble {
+    animation: none;
+  }
+
+  .animate-float {
+    animation: none;
+  }
+
+  .whatsapp-float {
+    animation: none;
+  }
+}
+
+/* Print Styles */
+@media print {
+  .header,
+  .nav-menu,
+  .whatsapp-float,
+  .chatbot-toggle,
+  .chatbot-widget,
+  .bubble-background {
+    display: none !important;
+  }
+
+  main {
+    margin-top: 0;
+  }
+
+  body {
+    font-size: 12pt;
+    line-height: 1.4;
+    color: black;
+    background: white;
+  }
+
+  .section-title,
+  .hero-title {
+    color: black;
+    background: none;
+    -webkit-text-fill-color: unset;
+  }
+
+  .service-card,
+  .feature-card,
+  .pricing-card {
+    break-inside: avoid;
+    border: 1px solid #ccc;
+    margin-bottom: 1rem;
+  }
+
+  .hero-section,
+  .services-section,
+  .features-section,
+  .pricing-section {
+    page-break-inside: avoid;
+  }
+}
+
+/* Dark Mode Responsive Adjustments */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #111827;
+    --bg-secondary: #1f2937;
+    --bg-tertiary: #374151;
+    --text-primary: #f9fafb;
+    --text-secondary: #d1d5db;
+    --text-light: #9ca3af;
+  }
+}
+
+/* Touch Device Optimizations */
+@media (pointer: coarse) {
+  .nav-link,
+  .contact-btn,
+  .cta-primary,
+  .cta-secondary,
+  .pricing-btn,
+  .submit-btn {
+    min-height: 44px;
+    padding: var(--spacing-md) var(--spacing-lg);
+  }
+
+  .whatsapp-float,
+  .chatbot-toggle {
+    width: 56px;
+    height: 56px;
+  }
+
+  .service-card,
+  .feature-card,
+  .use-case-card {
+    cursor: pointer;
+  }
+}
+
+/* Hover Device Optimizations */
+@media (hover: hover) {
+  .service-card:hover .service-overlay {
+    background: rgba(255, 255, 255, 1);
+    transform: translate(-50%, -50%) scale(1.1);
+  }
+
+  .feature-card:hover .feature-icon {
+    transform: scale(1.1);
+  }
+
+  .use-case-card:hover img {
+    transform: scale(1.05);
+  }
+}
+
+/* Focus Visible for Keyboard Navigation */
+@media (prefers-reduced-motion: no-preference) {
+  :focus-visible {
+    outline: 2px solid var(--primary-color);
+    outline-offset: 2px;
+    border-radius: var(--radius-sm);
+  }
+}
