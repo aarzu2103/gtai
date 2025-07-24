@@ -2,7 +2,7 @@
 
 class AIWebSolutionsChatbot {
     constructor() {
-        this.apiKey = 'AIzaSyBPrdPNA04A099TFHYr0TuC0WOcGeOH_KQ';
+        this.apiKey = '';
         this.apiUrl = 'https://generativelanguage.googleapis.com/v1beta/models/gemini-pro:generateContent';
         this.chatHistory = [];
         this.isOpen = false;
