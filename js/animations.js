@@ -6,7 +6,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initCounterAnimations();
     initParallaxEffects();
     initTypewriterEffect();
-    initParticleEffects();
     initProgressAnimations();
 });
 
@@ -44,9 +43,7 @@ function initScrollAnimations() {
     const autoAnimateElements = [
         '.service-card',
         '.feature-card',
-        '.use-case-card',
-        '.step-card',
-        '.pricing-card'
+        '.step-card'
     ];
     
     autoAnimateElements.forEach(selector => {
@@ -92,7 +89,7 @@ function initHoverAnimations() {
     });
     
     // Button hover effects
-    document.querySelectorAll('.cta-primary, .cta-secondary, .contact-btn, .pricing-btn').forEach(button => {
+    document.querySelectorAll('.cta-primary, .cta-secondary, .contact-btn, .demo-btn').forEach(button => {
         button.addEventListener('mouseenter', () => {
             button.style.transform = 'translateY(-3px) scale(1.05)';
         });
@@ -196,7 +193,7 @@ function initTypewriterEffect() {
         const speed = parseInt(element.dataset.speed) || 50;
         
         element.textContent = '';
-        element.style.borderRight = '2px solid #6366f1';
+        element.style.borderRight = '2px solid #8b5cf6';
         
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(entry => {
@@ -223,60 +220,13 @@ function typeWriter(element, text, speed) {
             // Blinking cursor effect
             setInterval(() => {
                 element.style.borderRight = element.style.borderRight === 'none' 
-                    ? '2px solid #6366f1' 
+                    ? '2px solid #8b5cf6' 
                     : 'none';
             }, 500);
         }
     }
     
     type();
-}
-
-// Particle effects
-function initParticleEffects() {
-    const particleContainers = document.querySelectorAll('[data-particles]');
-    
-    particleContainers.forEach(container => {
-        const count = parseInt(container.dataset.particles) || 20;
-        createParticles(container, count);
-    });
-}
-
-function createParticles(container, count) {
-    for (let i = 0; i < count; i++) {
-        setTimeout(() => {
-            const particle = document.createElement('div');
-            particle.className = 'particle';
-            
-            // Random properties
-            const size = Math.random() * 6 + 2;
-            const left = Math.random() * 100;
-            const animationDuration = Math.random() * 20 + 10;
-            const delay = Math.random() * 10;
-            const opacity = Math.random() * 0.5 + 0.3;
-            
-            particle.style.cssText = `
-                position: absolute;
-                width: ${size}px;
-                height: ${size}px;
-                left: ${left}%;
-                background: rgba(99, 102, 241, ${opacity});
-                border-radius: 50%;
-                pointer-events: none;
-                animation: particle-float ${animationDuration}s linear infinite;
-                animation-delay: ${delay}s;
-            `;
-            
-            container.appendChild(particle);
-            
-            // Remove particle after animation
-            setTimeout(() => {
-                if (particle.parentNode) {
-                    particle.parentNode.removeChild(particle);
-                }
-            }, (animationDuration + delay) * 1000);
-        }, i * 500);
-    }
 }
 
 // Progress bar animations
@@ -310,7 +260,7 @@ function initProgressAnimations() {
 function addInteractiveEffects() {
     // Ripple effect for buttons
     document.addEventListener('click', function(e) {
-        const button = e.target.closest('button, .btn, .cta-primary, .cta-secondary');
+        const button = e.target.closest('button, .btn, .cta-primary, .cta-secondary, .demo-btn');
         if (!button) return;
         
         const ripple = document.createElement('span');
@@ -460,14 +410,13 @@ function optimizeAnimations() {
         const style = document.createElement('style');
         style.textContent = `
             .reduced-animations * {
-                animation-duration: 0.1s !important;
+                animation-duration: 0.3s !important;
                 animation-iteration-count: 1 !important;
-                transition-duration: 0.1s !important;
+                transition-duration: 0.3s !important;
             }
             
-            .reduced-animations .bubble,
-            .reduced-animations .particle {
-                display: none !important;
+            .reduced-animations .bubble {
+                animation-duration: 8s !important;
             }
         `;
         document.head.appendChild(style);
@@ -481,7 +430,6 @@ document.addEventListener('DOMContentLoaded', optimizeAnimations);
 window.AnimationUtils = {
     animateCounter,
     typeWriter,
-    createParticles,
     initScrollAnimations,
     initHoverAnimations,
     optimizeAnimations

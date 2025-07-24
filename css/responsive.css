@@ -43,7 +43,7 @@
     top: 100%;
     left: 0;
     right: 0;
-    background: var(--bg-primary);
+    background: rgba(16, 185, 129, 0.95);
     box-shadow: var(--shadow-lg);
     padding: var(--spacing-md);
   }
@@ -55,15 +55,20 @@
   .nav-link {
     padding: var(--spacing-md);
     text-align: center;
-    border-bottom: 1px solid var(--gray-200);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.2);
   }
 
   /* Main content margin adjustment */
   main {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   /* Hero Section */
+  .hero-section {
+    padding: var(--spacing-2xl) 0;
+    min-height: 70vh;
+  }
+
   .hero-content {
     grid-template-columns: 1fr;
     gap: var(--spacing-xl);
@@ -107,10 +112,17 @@
     margin: 0 var(--spacing-sm);
   }
 
-  /* Use Cases Section */
-  .use-cases-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
+  .service-table {
+    font-size: 0.85rem;
+  }
+
+  .service-table td {
+    padding: var(--spacing-xs) 0;
+  }
+
+  .demo-btn {
+    width: 100%;
+    justify-content: center;
   }
 
   /* Features Section */
@@ -119,20 +131,16 @@
     gap: var(--spacing-lg);
   }
 
+  .feature-icon {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+  }
+
   /* Steps Section */
   .steps-container {
     grid-template-columns: 1fr;
     gap: var(--spacing-lg);
-  }
-
-  /* Pricing Section */
-  .pricing-grid {
-    grid-template-columns: 1fr;
-    gap: var(--spacing-lg);
-  }
-
-  .pricing-card.featured {
-    transform: none;
   }
 
   /* Contact Section */
@@ -186,11 +194,6 @@
     grid-template-columns: 1fr;
   }
 
-  /* Use Cases Section */
-  .use-cases-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   /* Features Section */
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -198,11 +201,6 @@
 
   /* Steps Section */
   .steps-container {
-    grid-template-columns: 1fr;
-  }
-
-  /* Pricing Section */
-  .pricing-grid {
     grid-template-columns: 1fr;
   }
 }
@@ -228,11 +226,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Use Cases Section */
-  .use-cases-grid {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
   /* Features Section */
   .features-grid {
     grid-template-columns: repeat(2, 1fr);
@@ -240,11 +233,6 @@
 
   /* Steps Section */
   .steps-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  /* Pricing Section */
-  .pricing-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
@@ -271,11 +259,6 @@
     grid-template-columns: repeat(2, 1fr);
   }
 
-  /* Use Cases Section */
-  .use-cases-grid {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
   /* Features Section */
   .features-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -283,11 +266,6 @@
 
   /* Steps Section */
   .steps-container {
-    grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Pricing Section */
-  .pricing-grid {
     grid-template-columns: repeat(3, 1fr);
   }
 
@@ -302,11 +280,6 @@
   /* Services Section - Allow more columns on very large screens */
   .services-grid {
     grid-template-columns: repeat(3, 1fr);
-  }
-
-  /* Use Cases Section */
-  .use-cases-grid {
-    grid-template-columns: repeat(5, 1fr);
   }
 
   /* Hero Section - Restore two-column layout */
@@ -332,6 +305,7 @@
 @media (orientation: landscape) and (max-height: 500px) {
   .hero-section {
     padding: var(--spacing-xl) 0;
+    min-height: auto;
   }
 
   .hero-title {
@@ -353,8 +327,7 @@
 
 /* High DPI Displays */
 @media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
-  .service-banner img,
-  .use-case-card img {
+  .service-banner img {
     image-rendering: -webkit-optimize-contrast;
   }
 }
@@ -374,11 +347,11 @@
     animation: none;
   }
 
-  .animate-float {
+  .whatsapp-float {
     animation: none;
   }
 
-  .whatsapp-float {
+  .demo-btn {
     animation: none;
   }
 }
@@ -413,8 +386,7 @@
   }
 
   .service-card,
-  .feature-card,
-  .pricing-card {
+  .feature-card {
     break-inside: avoid;
     border: 1px solid #ccc;
     margin-bottom: 1rem;
@@ -422,8 +394,7 @@
 
   .hero-section,
   .services-section,
-  .features-section,
-  .pricing-section {
+  .features-section {
     page-break-inside: avoid;
   }
 }
@@ -446,8 +417,8 @@
   .contact-btn,
   .cta-primary,
   .cta-secondary,
-  .pricing-btn,
-  .submit-btn {
+  .submit-btn,
+  .demo-btn {
     min-height: 44px;
     padding: var(--spacing-md) var(--spacing-lg);
   }
@@ -459,8 +430,7 @@
   }
 
   .service-card,
-  .feature-card,
-  .use-case-card {
+  .feature-card {
     cursor: pointer;
   }
 }
@@ -474,10 +444,6 @@
 
   .feature-card:hover .feature-icon {
     transform: scale(1.1);
-  }
-
-  .use-case-card:hover img {
-    transform: scale(1.05);
   }
 }
 
